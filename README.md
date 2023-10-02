@@ -5,8 +5,7 @@ My GitHub Pages website.
 ## Project structure
 
 - [decisions](./decisions) - Decision records
-
-- [docs](./docs) - The GitHub Pages static website content
+- [src](./src) - Markdown files for the mdBook site
 
 ## Getting started
 
@@ -28,4 +27,5 @@ My GitHub Pages website.
 
 ## Publishing
 
-To decide!
+The [mdbook GitHub Action](./.github/workflows/mdbook.yml) deploys the generated static website.
+It runs `mdbook build` and uploads the `book` directory. 
