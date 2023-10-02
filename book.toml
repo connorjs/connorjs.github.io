@@ -9,8 +9,8 @@ language = "en-US"
 build-dir = "book"  # Update mdbook.yml if you change!
 
 [output.html]
-default-theme = "white"
-preferred-dark-theme = "black"
+default-theme = "light"
+preferred-dark-theme = "dark"
 curly-quotes = true
 git-repository-url = "https://github.com/connorjs/connorjs.github.io"
 edit-url-template = "https://github.com/connorjs/connorjs.github.io/edit/main/{path}"
