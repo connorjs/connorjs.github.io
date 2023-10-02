@@ -1,4 +1,3 @@
-
 /* Globals */
 
 :root {
@@ -7,271 +6,221 @@
     --content-max-width: 750px;
     --menu-bar-height: 50px;
     --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
-    --code-font-size: 0.875em /* please adjust the ace font size accordingly in editor.js */
+    --code-font-size: 0.875em; /* please adjust the ace font size accordingly in editor.js */
 }
 
 /* Themes */
+/*
+Themes originate from Selenized: <https://github.com/jan-warchol/selenized/tree/master#readme>.
+To simplify editing, each theme defines its terminal colors plus bg, fg, and color-scheme.
+The theme also defines `--inline-code-color` due to code block inversions in dark mode.
+Light themes use `var(--brightred)` and dark themes use `var(--blue)`.
+The `html` block that follows these themes uses those terminal colors to define the mdBook colors.
+*/
 
-.ayu {
-    --bg: hsl(210, 25%, 8%);
-    --fg: #c5c5c5;
+.white {
+    --bg: #ffffff;
+    --fg: #474747;
+    --color-scheme: light;
+    --inline-code-color: var(--brightred);
 
-    --sidebar-bg: #14191f;
-    --sidebar-fg: #c8c9db;
-    --sidebar-non-existant: #5c6773;
-    --sidebar-active: #ffb454;
-    --sidebar-spacer: #2d334f;
+    --black: #ebebeb;
+    --brightblack: #cdcdcd;
 
-    --scrollbar: var(--sidebar-fg);
+    --red: #d6000c;
+    --brightred: #bf0000;
 
-    --icons: #737480;
-    --icons-hover: #b7b9cc;
+    --green: #1d9700;
+    --brightgreen: #008400;
 
-    --links: #0096cf;
+    --yellow: #c49700;
+    --brightyellow: #af8500;
 
-    --inline-code-color: #ffb454;
+    --blue: #0064e4;
+    --brightblue: #0054cf;
 
-    --theme-popup-bg: #14191f;
-    --theme-popup-border: #5c6773;
-    --theme-hover: #191f26;
+    --magenta: #dd0f9d;
+    --brightmagenta: #c7008b;
 
-    --quote-bg: hsl(226, 15%, 17%);
-    --quote-border: hsl(226, 15%, 22%);
+    --cyan: #00ad9c;
+    --brightcyan: #009a8a;
 
-    --warning-border: #ff8e00;
-
-    --table-border-color: hsl(210, 25%, 13%);
-    --table-header-bg: hsl(210, 25%, 28%);
-    --table-alternate-bg: hsl(210, 25%, 11%);
-
-    --searchbar-border-color: #848484;
-    --searchbar-bg: #424242;
-    --searchbar-fg: #fff;
-    --searchbar-shadow-color: #d4c89f;
-    --searchresults-header-fg: #666;
-    --searchresults-border-color: #888;
-    --searchresults-li-bg: #252932;
-    --search-mark-bg: #e3b171;
-
-    --color-scheme: dark;
-}
-
-.coal {
-    --bg: hsl(200, 7%, 8%);
-    --fg: #98a3ad;
-
-    --sidebar-bg: #292c2f;
-    --sidebar-fg: #a1adb8;
-    --sidebar-non-existant: #505254;
-    --sidebar-active: #3473ad;
-    --sidebar-spacer: #393939;
-
-    --scrollbar: var(--sidebar-fg);
-
-    --icons: #43484d;
-    --icons-hover: #b3c0cc;
-
-    --links: #2b79a2;
-
-    --inline-code-color: #c5c8c6;
-
-    --theme-popup-bg: #141617;
-    --theme-popup-border: #43484d;
-    --theme-hover: #1f2124;
-
-    --quote-bg: hsl(234, 21%, 18%);
-    --quote-border: hsl(234, 21%, 23%);
-
-    --warning-border: #ff8e00;
-
-    --table-border-color: hsl(200, 7%, 13%);
-    --table-header-bg: hsl(200, 7%, 28%);
-    --table-alternate-bg: hsl(200, 7%, 11%);
-
-    --searchbar-border-color: #aaa;
-    --searchbar-bg: #b7b7b7;
-    --searchbar-fg: #000;
-    --searchbar-shadow-color: #aaa;
-    --searchresults-header-fg: #666;
-    --searchresults-border-color: #98a3ad;
-    --searchresults-li-bg: #2b2b2f;
-    --search-mark-bg: #355c7d;
-
-    --color-scheme: dark;
+    --white: #878787;
+    --brightwhite: #282828;
 }
 
 .light {
-    --bg: hsl(0, 0%, 100%);
-    --fg: hsl(0, 0%, 0%);
-
-    --sidebar-bg: #fafafa;
-    --sidebar-fg: hsl(0, 0%, 0%);
-    --sidebar-non-existant: #aaaaaa;
-    --sidebar-active: #1f1fff;
-    --sidebar-spacer: #f4f4f4;
-
-    --scrollbar: #8F8F8F;
-
-    --icons: #747474;
-    --icons-hover: #000000;
-
-    --links: #20609f;
-
-    --inline-code-color: #301900;
-
-    --theme-popup-bg: #fafafa;
-    --theme-popup-border: #cccccc;
-    --theme-hover: #e6e6e6;
-
-    --quote-bg: hsl(197, 37%, 96%);
-    --quote-border: hsl(197, 37%, 91%);
-
-    --warning-border: #ff8e00;
-
-    --table-border-color: hsl(0, 0%, 95%);
-    --table-header-bg: hsl(0, 0%, 80%);
-    --table-alternate-bg: hsl(0, 0%, 97%);
-
-    --searchbar-border-color: #aaa;
-    --searchbar-bg: #fafafa;
-    --searchbar-fg: #000;
-    --searchbar-shadow-color: #aaa;
-    --searchresults-header-fg: #666;
-    --searchresults-border-color: #888;
-    --searchresults-li-bg: #e4f2fe;
-    --search-mark-bg: #a2cff5;
-
+    --bg: #fbf3db;
+    --fg: #53676d;
     --color-scheme: light;
+    --inline-code-color: var(--brightred);
+
+    --black: #e9e4d0;
+    --brightblack: #cfcebe;
+
+    --red: #d2212d;
+    --brightred: #cc1729;
+
+    --green: #489100;
+    --brightgreen: #428b00;
+
+    --yellow: #ad8900;
+    --brightyellow: #a78300;
+
+    --blue: #0072d4;
+    --brightblue: #006dce;
+
+    --magenta: #ca4898;
+    --brightmagenta: #c44392;
+
+    --cyan: #009c8f;
+    --brightcyan: #00978a;
+
+    --white: #909995;
+    --brightwhite: #3a4d53;
 }
 
-.navy {
-    --bg: hsl(226, 23%, 11%);
-    --fg: #bcbdd0;
-
-    --sidebar-bg: #282d3f;
-    --sidebar-fg: #c8c9db;
-    --sidebar-non-existant: #505274;
-    --sidebar-active: #2b79a2;
-    --sidebar-spacer: #2d334f;
-
-    --scrollbar: var(--sidebar-fg);
-
-    --icons: #737480;
-    --icons-hover: #b7b9cc;
-
-    --links: #2b79a2;
-
-    --inline-code-color: #c5c8c6;
-
-    --theme-popup-bg: #161923;
-    --theme-popup-border: #737480;
-    --theme-hover: #282e40;
-
-    --quote-bg: hsl(226, 15%, 17%);
-    --quote-border: hsl(226, 15%, 22%);
-
-    --warning-border: #ff8e00;
-
-    --table-border-color: hsl(226, 23%, 16%);
-    --table-header-bg: hsl(226, 23%, 31%);
-    --table-alternate-bg: hsl(226, 23%, 14%);
-
-    --searchbar-border-color: #aaa;
-    --searchbar-bg: #aeaec6;
-    --searchbar-fg: #000;
-    --searchbar-shadow-color: #aaa;
-    --searchresults-header-fg: #5f5f71;
-    --searchresults-border-color: #5c5c68;
-    --searchresults-li-bg: #242430;
-    --search-mark-bg: #a2cff5;
-
+.dark {
+    --bg: #103c48;
+    --fg: #adbcbc;
     --color-scheme: dark;
+    --inline-code-color: var(--blue);
+
+    --black: #174956;
+    --brightblack: #325b66;
+
+    --red: #fa5750;
+    --brightred: #ff665c;
+
+    --green: #75b938;
+    --brightgreen: #84c747;
+
+    --yellow: #dbb32d;
+    --brightyellow: #ebc13d;
+
+    --blue: #4695f7;
+    --brightblue: #58a3ff;
+
+    --magenta: #f275be;
+    --brightmagenta: #ff84cd;
+
+    --cyan: #41c7b9;
+    --brightcyan: #53d6c7;
+
+    --white: #72898f;
+    --brightwhite: #cad8d9;
 }
 
-.rust {
-    --bg: hsl(60, 9%, 87%);
-    --fg: #262625;
+.black {
+    --bg: #181818;
+    --fg: #b9b9b9;
+    --color-scheme: dark;
+    --inline-code-color: var(--blue);
 
-    --sidebar-bg: #3b2e2a;
-    --sidebar-fg: #c8c9db;
-    --sidebar-non-existant: #505254;
-    --sidebar-active: #e69f67;
-    --sidebar-spacer: #45373a;
+    --black: #252525;
+    --brightblack: #3b3b3b;
 
-    --scrollbar: var(--sidebar-fg);
+    --red: #ed4a46;
+    --brightred: #ff5e56;
 
-    --icons: #737480;
-    --icons-hover: #262625;
+    --green: #70b433;
+    --brightgreen: #83c746;
 
-    --links: #2b79a2;
+    --yellow: #dbb32d;
+    --brightyellow: #efc541;
 
-    --inline-code-color: #6e6b5e;
+    --blue: #368aeb;
+    --brightblue: #4f9cfe;
 
-    --theme-popup-bg: #e1e1db;
-    --theme-popup-border: #b38f6b;
-    --theme-hover: #99908a;
+    --magenta: #eb6eb7;
+    --brightmagenta: #ff81ca;
 
-    --quote-bg: hsl(60, 5%, 75%);
-    --quote-border: hsl(60, 5%, 70%);
+    --cyan: #3fc5b7;
+    --brightcyan: #56d8c9;
 
-    --warning-border: #ff8e00;
-
-    --table-border-color: hsl(60, 9%, 82%);
-    --table-header-bg: #b3a497;
-    --table-alternate-bg: hsl(60, 9%, 84%);
-
-    --searchbar-border-color: #aaa;
-    --searchbar-bg: #fafafa;
-    --searchbar-fg: #000;
-    --searchbar-shadow-color: #aaa;
-    --searchresults-header-fg: #666;
-    --searchresults-border-color: #888;
-    --searchresults-li-bg: #dec2a2;
-    --search-mark-bg: #e69f67;
-
-    --color-scheme: light;
+    --white: #777777;
+    --brightwhite: #dedede;
 }
 
+/* Invert code blocks for custom dark themes */
+.dark .hljs, .black .hljs {
+    filter: invert(100%);
+}
+
+/* Use the default dark theme in no-js case. */
 @media (prefers-color-scheme: dark) {
+    /* Default light = light */
     .light.no-js {
-        --bg: hsl(200, 7%, 8%);
-        --fg: #98a3ad;
+        /* Copies default dark = black */
+        --bg: #181818;
+        --fg: #b9b9b9;
+        --color-scheme: dark;
+        --inline-code-color: var(--blue);
 
-        --sidebar-bg: #292c2f;
-        --sidebar-fg: #a1adb8;
-        --sidebar-non-existant: #505254;
-        --sidebar-active: #3473ad;
-        --sidebar-spacer: #393939;
+        --black: #252525;
+        --brightblack: #3b3b3b;
 
-        --scrollbar: var(--sidebar-fg);
+        --red: #ed4a46;
+        --brightred: #ff5e56;
 
-        --icons: #43484d;
-        --icons-hover: #b3c0cc;
+        --green: #70b433;
+        --brightgreen: #83c746;
 
-        --links: #2b79a2;
+        --yellow: #dbb32d;
+        --brightyellow: #efc541;
 
-        --inline-code-color: #c5c8c6;
+        --blue: #368aeb;
+        --brightblue: #4f9cfe;
 
-        --theme-popup-bg: #141617;
-        --theme-popup-border: #43484d;
-        --theme-hover: #1f2124;
+        --magenta: #eb6eb7;
+        --brightmagenta: #ff81ca;
 
-        --quote-bg: hsl(234, 21%, 18%);
-        --quote-border: hsl(234, 21%, 23%);
+        --cyan: #3fc5b7;
+        --brightcyan: #56d8c9;
 
-        --warning-border: #ff8e00;
-
-        --table-border-color: hsl(200, 7%, 13%);
-        --table-header-bg: hsl(200, 7%, 28%);
-        --table-alternate-bg: hsl(200, 7%, 11%);
-
-        --searchbar-border-color: #aaa;
-        --searchbar-bg: #b7b7b7;
-        --searchbar-fg: #000;
-        --searchbar-shadow-color: #aaa;
-        --searchresults-header-fg: #666;
-        --searchresults-border-color: #98a3ad;
-        --searchresults-li-bg: #2b2b2f;
-        --search-mark-bg: #355c7d;
+        --white: #777777;
+        --brightwhite: #dedede;
     }
+
+    /* And invert code block */
+    .light.no-js .hljs {
+        filter: invert(100%);
+    }
+}
+
+html {
+    --sidebar-bg: var(--black);
+    --sidebar-fg: var(--brightwhite);
+    --sidebar-non-existant: var(--white);
+    --sidebar-active: var(--blue);
+    --sidebar-spacer: var(--white);
+
+    --scrollbar: var(--fg);
+
+    --icons: var(--white);
+    --icons-hover: var(--fg);
+
+    --links: var(--blue);
+
+    --theme-popup-bg: var(--black);
+    --theme-popup-border: var(--white);
+    --theme-hover: var(--brightblack);
+
+    --quote-bg: var(--black);
+    --quote-border: var(--brightblack);
+
+    --warning-border: var(--yellow);
+
+    --table-border-color: var(--white);
+    --table-header-bg: var(--brightblack);
+    --table-alternate-bg: var(--black);
+
+    --searchbar-border-color: var(--black);
+    --searchbar-bg: var(--fg);
+    --searchbar-fg: var(--bg);
+    --searchbar-shadow-color: var(--brightblack);
+    --searchresults-header-fg: var(--white);
+    --searchresults-border-color: var(--white);
+    --searchresults-li-bg: var(--brightwhite);
+    --search-mark-bg: var(--cyan);
 }
