@@ -11,175 +11,108 @@
 
 /* Themes */
 /*
-Themes originate from Selenized: <https://github.com/jan-warchol/selenized/tree/master#readme>.
-To simplify editing, each theme defines its terminal colors plus bg, fg, and color-scheme.
+Themes originate from [Selenized](https://github.com/jan-warchol/selenized/tree/master#readme),
+but I have renamed them: Light (White), Warm Light (Light), Cool Dark (Dark), Dark (Black).
+To simplify editing, each theme defines a subset of its terminal colors.
 The theme also defines `--inline-code-color` due to code block inversions in dark mode.
 Light themes use `var(--brightred)` and dark themes use `var(--blue)`.
 The `html` block that follows these themes uses those terminal colors to define the mdBook colors.
 */
 
-.white {
+.light {
     --bg: #ffffff;
     --fg: #474747;
     --color-scheme: light;
+
     --inline-code-color: var(--brightred);
+    --brightred: #bf0000;
 
     --black: #ebebeb;
     --brightblack: #cdcdcd;
-
-    --red: #d6000c;
-    --brightred: #bf0000;
-
-    --green: #1d9700;
-    --brightgreen: #008400;
-
-    --yellow: #c49700;
-    --brightyellow: #af8500;
-
-    --blue: #0064e4;
-    --brightblue: #0054cf;
-
-    --magenta: #dd0f9d;
-    --brightmagenta: #c7008b;
-
-    --cyan: #00ad9c;
-    --brightcyan: #009a8a;
-
     --white: #878787;
     --brightwhite: #282828;
+
+    --yellow: #c49700;
+    --blue: #0064e4;
+    --cyan: #00ad9c;
 }
 
-.light {
+.warmlight {
     --bg: #fbf3db;
     --fg: #53676d;
     --color-scheme: light;
+
     --inline-code-color: var(--brightred);
+    --brightred: #cc1729;
 
     --black: #e9e4d0;
     --brightblack: #cfcebe;
-
-    --red: #d2212d;
-    --brightred: #cc1729;
-
-    --green: #489100;
-    --brightgreen: #428b00;
-
-    --yellow: #ad8900;
-    --brightyellow: #a78300;
-
-    --blue: #0072d4;
-    --brightblue: #006dce;
-
-    --magenta: #ca4898;
-    --brightmagenta: #c44392;
-
-    --cyan: #009c8f;
-    --brightcyan: #00978a;
-
     --white: #909995;
     --brightwhite: #3a4d53;
+
+    --yellow: #ad8900;
+    --blue: #0072d4;
+    --cyan: #009c8f;
 }
 
-.dark {
+.cooldark {
     --bg: #103c48;
     --fg: #adbcbc;
     --color-scheme: dark;
+
     --inline-code-color: var(--blue);
 
     --black: #174956;
     --brightblack: #325b66;
-
-    --red: #fa5750;
-    --brightred: #ff665c;
-
-    --green: #75b938;
-    --brightgreen: #84c747;
-
-    --yellow: #dbb32d;
-    --brightyellow: #ebc13d;
-
-    --blue: #4695f7;
-    --brightblue: #58a3ff;
-
-    --magenta: #f275be;
-    --brightmagenta: #ff84cd;
-
-    --cyan: #41c7b9;
-    --brightcyan: #53d6c7;
-
     --white: #72898f;
     --brightwhite: #cad8d9;
+
+    --yellow: #dbb32d;
+    --blue: #4695f7;
+    --cyan: #41c7b9;
 }
 
-.black {
+.dark {
     --bg: #181818;
     --fg: #b9b9b9;
     --color-scheme: dark;
+
     --inline-code-color: var(--blue);
 
     --black: #252525;
     --brightblack: #3b3b3b;
-
-    --red: #ed4a46;
-    --brightred: #ff5e56;
-
-    --green: #70b433;
-    --brightgreen: #83c746;
-
-    --yellow: #dbb32d;
-    --brightyellow: #efc541;
-
-    --blue: #368aeb;
-    --brightblue: #4f9cfe;
-
-    --magenta: #eb6eb7;
-    --brightmagenta: #ff81ca;
-
-    --cyan: #3fc5b7;
-    --brightcyan: #56d8c9;
-
     --white: #777777;
     --brightwhite: #dedede;
+
+    --yellow: #dbb32d;
+    --blue: #368aeb;
+    --cyan: #3fc5b7;
 }
 
 /* Invert code blocks for custom dark themes */
-.dark .hljs, .black .hljs {
+.dark .hljs, .cooldark .hljs {
     filter: invert(100%);
 }
 
-/* Use the default dark theme in no-js case. */
+/* Use the dark theme in no-js case. */
 @media (prefers-color-scheme: dark) {
-    /* Default light = light */
+    /* Default light */
     .light.no-js {
-        /* Copies default dark = black */
+        /* Copies default dark */
         --bg: #181818;
         --fg: #b9b9b9;
         --color-scheme: dark;
+
         --inline-code-color: var(--blue);
 
         --black: #252525;
         --brightblack: #3b3b3b;
-
-        --red: #ed4a46;
-        --brightred: #ff5e56;
-
-        --green: #70b433;
-        --brightgreen: #83c746;
-
-        --yellow: #dbb32d;
-        --brightyellow: #efc541;
-
-        --blue: #368aeb;
-        --brightblue: #4f9cfe;
-
-        --magenta: #eb6eb7;
-        --brightmagenta: #ff81ca;
-
-        --cyan: #3fc5b7;
-        --brightcyan: #56d8c9;
-
         --white: #777777;
         --brightwhite: #dedede;
+
+        --yellow: #dbb32d;
+        --blue: #368aeb;
+        --cyan: #3fc5b7;
     }
 
     /* And invert code block */
