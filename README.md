@@ -5,7 +5,7 @@ My GitHub Pages website.
 ## Project structure
 
 - [decisions](./decisions) - Decision records
-- [src](./src) - Markdown files for the mdBook site
+- [docs](./docs) - Markdown files for the mdBook site
 
 ## Getting started
 
