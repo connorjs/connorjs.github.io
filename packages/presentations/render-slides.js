@@ -1,5 +1,6 @@
 import Reveal from "reveal.js";
-import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm.js";
+import Markdown from "reveal.js/plugin/markdown/markdown.esm.js";
+import Highlight from "reveal.js/plugin/highlight/highlight.esm.js";
 
 import "reveal.js/dist/reveal.css";
 import "./render-slides.pcss";
@@ -14,11 +15,16 @@ export function renderSlides(slides) {
 	textarea.setAttribute("data-template", undefined);
 	textarea.innerHTML = slides;
 
-	document.getElementById("root").append(textarea);
+	document.querySelector(`[data-id="root"]`).append(textarea);
 
 	let deck = new Reveal({
 		hash: true,
-		plugins: [RevealMarkdown],
+		hashOneBasedIndex: true,
+		hideCursorTime: 3_000, // ms
+		markdown: {
+			smartypants: true, // use “smart” typographic punctuation
+		},
+		plugins: [Markdown, Highlight],
 		slideNumber: true,
 	});
 	deck.initialize();
