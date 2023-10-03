@@ -2,6 +2,7 @@
 
 [Introduction](index.md)
 
----
+# Other
 
-[Test page](test.md)
+- [Presentations](presentations.md)
+- [Test page](test.md)

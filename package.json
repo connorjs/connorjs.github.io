@@ -1,0 +1,10 @@
+{
+	"name": "connorjs-github-io",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "npm run build -w presentations",
+		"start": "npm start -w presentations"
+	},
+	"workspaces": [ "packages/*" ]
+}
