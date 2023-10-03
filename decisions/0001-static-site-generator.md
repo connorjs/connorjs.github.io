@@ -5,6 +5,7 @@ deciders: @connorjs
 consulted: N/A
 informed: N/A
 ---
+
 # Static site generator
 
 ## Context and Problem Statement
@@ -14,22 +15,22 @@ Which tool should we use?
 
 ## Decision Drivers
 
-* Should focus on content over style
-* Should support customization (e.g. site-wide styling, output directories)
-* Should have low learning curve for new contributors
-* Should work on macOS and Windows trivially
-* Should have a good code review experience (diffs, rendering)
-* (Note) I will need to select a content/book-focused engine for work projects
+- Should focus on content over style
+- Should support customization (e.g. site-wide styling, output directories)
+- Should have low learning curve for new contributors
+- Should work on macOS and Windows trivially
+- Should have a good code review experience (diffs, rendering)
+- (Note) I will need to select a content/book-focused engine for work projects
 
 ## Considered Options
 
 _Listed default, then alphabetical_
 
-* [Jekyll](https://jekyllrb.com) (default)
-* [Asciidoctor](https://asciidoctor.org) ([AsciiDoc](https://asciidoc.org))
-* [Docusaurus](https://docusaurus.io)
-* [mdBook](https://rust-lang.github.io/mdBook/)
-* [MkDocs](https://www.mkdocs.org) ([Material for MkDocs](https://squidfunk.github.io/mkdocs-material/))
+- [Jekyll](https://jekyllrb.com) (default)
+- [Asciidoctor](https://asciidoctor.org) ([AsciiDoc](https://asciidoc.org))
+- [Docusaurus](https://docusaurus.io)
+- [mdBook](https://rust-lang.github.io/mdBook/)
+- [MkDocs](https://www.mkdocs.org) ([Material for MkDocs](https://squidfunk.github.io/mkdocs-material/))
 
 ## Decision Outcome
 
@@ -43,8 +44,8 @@ mdBook also felt the best to use (opinion) and seems easiest to build multi-them
 
 I want to highlight two consequences given mdBook’s Rust origin.
 
-* Good, b/c Rust will be installed, which opens the door to other (fast) tools.
-* Bad, b/c Rust requires an additional install step for C#/Java and JS/TS developers.
+- Good, b/c Rust will be installed, which opens the door to other (fast) tools.
+- Bad, b/c Rust requires an additional install step for C#/Java and JS/TS developers.
 
 ### Confirmation
 
@@ -58,47 +59,47 @@ _See [§ More information](#more-information) for why._
 
 ### Jekyll
 
-* Good, b/c default for GitHub Pages (works out of the box)
-* Bad, b/c it does not officially support windows ([docs](https://jekyllrb.com/docs/installation/windows/))
-* Neutral, b/c Ruby is not a primary language (requires additional installation)
+- Good, b/c default for GitHub Pages (works out of the box)
+- Bad, b/c it does not officially support windows ([docs](https://jekyllrb.com/docs/installation/windows/))
+- Neutral, b/c Ruby is not a primary language (requires additional installation)
 
 _Disclaimer: I looked at Jekyll the least after seeing no official Windows support._
 
 ### Asciidoctor
 
-* Good, b/c meant for books (not single documents, compared to Markdown)
-* Good, b/c IDE tooling
-* Good, b/c macro support and extensible
-* Neutral, b/c supports other formats (e.g. EPUB) - neutral b/c this repo is focused on the web
-* Bad, b/c not as widespread as Markdown
-* Bad, b/c native repo rendering is unsatisfactory (code reviews)
+- Good, b/c meant for books (not single documents, compared to Markdown)
+- Good, b/c IDE tooling
+- Good, b/c macro support and extensible
+- Neutral, b/c supports other formats (e.g. EPUB) - neutral b/c this repo is focused on the web
+- Bad, b/c not as widespread as Markdown
+- Bad, b/c native repo rendering is unsatisfactory (code reviews)
 
 ### Docusaurus
 
-* Good, b/c feature-rich and built for the web (React at the end of the day)
-* Good, b/c markdown (MD and MDX)
-* Good, b/c Node.js based
-* Neutral, b/c gives me the chance to learn and experiment with MDX
-* Bad, b/c essentially a React application (requires more coding and can lessen focus on content)
+- Good, b/c feature-rich and built for the web (React at the end of the day)
+- Good, b/c markdown (MD and MDX)
+- Good, b/c Node.js based
+- Neutral, b/c gives me the chance to learn and experiment with MDX
+- Bad, b/c essentially a React application (requires more coding and can lessen focus on content)
 
 ### MkDocs
 
-* Good, b/c focused on content
-* Good, b/c markdown
-* Good, b/c macro support and extensible
-* Good, b/c learning can extend to presentations (reveal.js)
-* Neutral, b/c Python based (we expect some to have Python installed)
-* Neutral, b/c native repo rendering is unsatisfactory for extensions
+- Good, b/c focused on content
+- Good, b/c markdown
+- Good, b/c macro support and extensible
+- Good, b/c learning can extend to presentations (reveal.js)
+- Neutral, b/c Python based (we expect some to have Python installed)
+- Neutral, b/c native repo rendering is unsatisfactory for extensions
 
 ### mdBook
 
-* Good, b/c focused on content
-* Good, b/c markdown
-* Good, b/c extensible
-* Good, b/c native repo is satisfactory (limits extensions by default)
-* Good, b/c built-in search indexing and keyboard shortcuts
-* Neutral, b/c Rust (a new tool for some, but fast and gives binary install option)
-* Bad/Good, b/c less extensions (which can seen as doubly good for focusing on content)
+- Good, b/c focused on content
+- Good, b/c markdown
+- Good, b/c extensible
+- Good, b/c native repo is satisfactory (limits extensions by default)
+- Good, b/c built-in search indexing and keyboard shortcuts
+- Neutral, b/c Rust (a new tool for some, but fast and gives binary install option)
+- Bad/Good, b/c less extensions (which can seen as doubly good for focusing on content)
 
 ## More Information
 

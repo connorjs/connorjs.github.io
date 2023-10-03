@@ -10,16 +10,16 @@ import "reveal.js/dist/theme/dracula.css"; // TODO: Build theme
  * @param {string} slides - Markdown slide deck
  */
 export function renderSlides(slides) {
-  const textarea = document.createElement("textarea");
-  textarea.setAttribute("data-template", undefined);
-  textarea.innerHTML = slides;
+	const textarea = document.createElement("textarea");
+	textarea.setAttribute("data-template", undefined);
+	textarea.innerHTML = slides;
 
-  document.getElementById("root").append(textarea);
+	document.getElementById("root").append(textarea);
 
-  let deck = new Reveal({
-    hash: true,
-    plugins: [RevealMarkdown],
-    slideNumber: true,
-  });
-  deck.initialize();
+	let deck = new Reveal({
+		hash: true,
+		plugins: [RevealMarkdown],
+		slideNumber: true,
+	});
+	deck.initialize();
 }

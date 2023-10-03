@@ -26,12 +26,12 @@ console.log(`Hello, world!`);
 > quote
 
 | A   |   B   |     C |
-|:----|:-----:|------:|
+| :-- | :---: | ----: |
 | One |  Two  | Three |
-| Red | Green |  Blue | 
+| Red | Green |  Blue |
 
 > **Note**
-> 
+>
 > Admonition
 
 <div class="warning">
