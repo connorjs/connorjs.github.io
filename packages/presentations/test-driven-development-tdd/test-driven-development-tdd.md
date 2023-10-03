@@ -467,9 +467,62 @@ it(`should handle two parameters update`, ({ expect }) => {
 
 ---
 
+<section>
+
+## Testing tools
+
+- Parameterized test cases
+
+- Snapshot tests (inline preferred)
+
+- Data-driven tests (with pattern matching)
+
+</section>
+
+<section>
+
+## Parameterized test case
+
+```js
+describe(`capitalize`, () => {
+  it.each([
+    [``, ``],
+    [`Hello`, `Hello`],
+    [`world`, `World`],
+    [`42`, `42`],
+  ])(`'%s' should capitalize to '%s'`, (input, expected) => {
+    expect(capitalize(input)).toBe(expected);
+  });
+});
+```
+
+</section>
+
+---
+
+<section>
+
+## Review
+
+- Defined TDD: Make it your own
+
+- Test pyramid
+
+- Red-Green-Refactor loop
+
+- Recipes: New, Bug, and Refactor
+
+- Coding examples
+
+</section>
+
+<section>
+
 ## So, can you TDD?
 
 ## Yes you can! <!-- .element class="fragment" -->
+
+</section>
 
 ---
 
