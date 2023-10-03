@@ -142,7 +142,7 @@ Traditional pyramid, but could have 4 layers.
 
 <section>
 <aside class="notes" data-markdown>
-My 3 recipes. If they work for you, great.
+My 3 recipes. If they work for you, great. (mention no copy paste)
 
 Click: New code, fresh, TDD how you please
 
@@ -154,11 +154,11 @@ Click: Refactor, make sure tests exist, red-green-refactor loop
 
 ## My 3 recipes
 
-- New code <!-- .element class="fragment" -->
+1. New code <!-- .element class="fragment" -->
 
-- Bug fix <!-- .element class="fragment" -->
+2. Bug fix <!-- .element class="fragment" -->
 
-- Refactoring and legacy code <!-- .element class="fragment" -->
+3. Refactoring and legacy code <!-- .element class="fragment" -->
 
 </section>
 
@@ -172,17 +172,300 @@ Click: Refactor, make sure tests exist, red-green-refactor loop
 </section>
 
 <section>
-<aside class="notes"></aside>
+<aside class="notes">Disclaimer: This is pseudo-JS right now.</aside>
 
-TODO...
+## URL state: Part 1
+
+- Store state in the URL, such as search terms, for link sharing
+
+- Some React here, but principles apply regardless
+
+- Initial requirements
+  - Decide the key
+  - Use a default value
+  - Function returns value and update function
+
+</section>
+
+<section data-auto-animate>
+
+## URL state: Part 1
+
+Write the test
+
+```js
+it(`should use the given key`, ({ expect }) => {
+	useUrlState(`foo`, `bar`);
+	expect(searchParams().get(`foo`)).toBeDefined();
+});
+```
+
+</section>
+<section data-auto-animate>
+
+## URL state: Part 1
+
+Make it compile/run
+
+```js
+it(`should use the given key`, ({ expect }) => {
+	useUrlState(`foo`, `bar`);
+	expect(searchParams().get(`foo`)).toBeDefined();
+});
+```
+
+```js
+function useUrlState() {
+	// TODO
+}
+```
+
+</section>
+<section data-auto-animate>
+
+## URL state: Part 1
+
+Make it pass
+
+```js
+it(`should use the given key`, ({ expect }) => {
+	useUrlState(`foo`, `bar`);
+	expect(searchParams().get(`foo`)).toBeDefined();
+});
+```
+
+```js
+function useUrlState(key, initial) {
+	const params = new URLSearchParams({ [key]: initial });
+	window.location.search = params.toString();
+}
+```
+
+</section>
+<section data-auto-animate>
+
+## URL state: Part 1
+
+Next test: get the value
+
+```js
+it(`should return the value`, ({ expect }) => {
+	const [foo] = useUrlState(`foo`, `bar`);
+	expect(foo).toBe(`bar`);
+});
+```
+
+```js
+function useUrlState(key, initial) {
+	const params = new URLSearchParams({ [key]: initial });
+	window.location.search = params.toString();
+}
+```
+
+</section>
+<section data-auto-animate>
+
+## URL state: Part 1
+
+Make it pass
+
+```js
+it(`should return the value`, ({ expect }) => {
+	const [foo] = useUrlState(`foo`, `bar`);
+	expect(foo).toBe(`bar`);
+});
+```
+
+```js
+function useUrlState(key, initial) {
+	const params = new URLSearchParams({ [key]: initial });
+	window.location.search = params.toString();
+	return [params.get(key)];
+}
+```
+
+</section>
+<section data-auto-animate>
+
+## URL state: Part 1
+
+One more time! The update
+
+```js
+it(`should update the URL`, ({ expect }) => {
+	const [, setFoo] = useUrlState(`foo`, `bar`);
+	setFoo(`new-value`);
+	expect(window.location.search).toBe(`foo=new-value`);
+});
+```
+
+```js
+function useUrlState(key, initial) {
+	const params = new URLSearchParams({ [key]: initial });
+	window.location.search = params.toString();
+	return [params.get(key)];
+}
+```
+
+</section>
+<section data-auto-animate>
+
+## URL state: Part 1
+
+And make it pass!
+
+```js
+it(`should update the URL`, ({ expect }) => {
+	const [, setFoo] = useUrlState(`foo`, `bar`);
+	setFoo(`new-value`);
+	expect(window.location.search).toBe(`foo=new-value`);
+});
+```
+
+```js
+function useUrlState(key, initial) {
+	// ...
+	const update = (newValue) => {
+		const newParams = new URLSearchParams({ [key]: newValue });
+		window.location.search = newParams.toString();
+	};
+	return [params.get(key), update];
+}
+```
+
+</section>
+
+<section>
+
+- should use the given key
+- should return the value
+- should update the URL
 
 </section>
 
 ---
 
-## So, can we TDD?
+<section>
 
-## Yes we can! <!-- .element class="fragment" -->
+## URL state: Part 2
+
+- Clean slate (one week later)
+
+- New bug report
+
+- Best time for TDD
+
+</section>
+
+<section data-auto-animate>
+
+## URL state: Part 2
+
+Make a failing test
+
+```js
+it(`should handle two parameters`, ({ expect }) => {
+	useUrlState(`foo`, `bar`);
+	useUrlState(`fish`, `red`);
+	expect(window.location.search).toBe(`foo=bar&fish=red`);
+});
+```
+
+</section>
+
+<section data-auto-animate>
+
+## URL state: Part 2
+
+And squash the bug!
+
+```js []
+function useUrlState(key, initial) {
+	const params = new URLSearchParams({ [key]: initial });
+	const update = (newValue) => {
+		const newParams = new URLSearchParams({ [key]: newValue });
+		window.location.search = newParams.toString();
+	};
+	return [params.get(key), update];
+}
+```
+
+<!-- .element data-id="code-animation" -->
+
+</section>
+
+<section data-auto-animate>
+
+## URL state: Part 2
+
+And squash the bug!
+
+```js [2-3]
+function useUrlState(key, initial) {
+	const params = new URLSearchParams(window.location.search);
+	params.set(key, initial);
+	const update = (newValue) => {
+		const newParams = new URLSearchParams({ [key]: newValue });
+		window.location.search = newParams.toString();
+	};
+	return [params.get(key), update];
+}
+```
+
+<!-- .element data-id="code-animation" -->
+
+</section>
+
+<section data-auto-animate>
+
+## URL state: Part 2
+
+And correct update right now
+
+```js [5-6]
+function useUrlState(key, initial) {
+	const params = new URLSearchParams(window.location.search);
+	params.set(key, initial);
+	const update = (newValue) => {
+		const newParams = new URLSearchParams(window.location.search);
+		newParams.set(key, newValue);
+		window.location.search = newParams.toString();
+	};
+	return [params.get(key), update];
+}
+```
+
+<!-- .element data-id="code-animation" -->
+
+</section>
+
+<section data-auto-animate>
+
+## URL state: Part 2
+
+And then I add the update test
+
+```js
+it(`should handle two parameters update`, ({ expect }) => {
+	const [, setFoo] = useUrlState(`foo`, `bar`);
+	const [, setFish] = useUrlState(`fish`, `red`);
+	expect(window.location.search).toBe(`foo=bar&fish=red`);
+
+	setFish("blue");
+	expect(window.location.search).toBe(`foo=bar&fish=blue`);
+
+	setFoo("bazz");
+	expect(window.location.search).toBe(`foo=bazz&fish=blue`);
+});
+```
+
+</section>
+
+---
+
+## So, can you TDD?
+
+## Yes you can! <!-- .element class="fragment" -->
 
 ---
 

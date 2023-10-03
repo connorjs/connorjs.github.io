@@ -25,7 +25,7 @@ export function renderSlides(slides) {
 		markdown: {
 			smartypants: true, // use “smart” typographic punctuation
 		},
-		plugins: [Highlight, Markdown, Notes],
+		plugins: [Markdown, Highlight, Notes], // order matters for plugins!
 		slideNumber: true,
 	});
 	deck.initialize();

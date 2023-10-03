@@ -1,5 +1,15 @@
 # Presentations
 
+## TDD: Yes You Can!
+
+I discuss Test Driven Development (TDD) with a focus on making it your own and
+not restricting yourself to the strictness often associated with TDD.
+
+I cover definitions, give my recipes for success, and walk through code examples.
+
+<a href="/presentations/test-driven-development-tdd" target="_blank">Open presentation
+<i class="fa fa-external-link"></i><span class="sr-only">in a new tab</span></a>
+
 ## Example
 
 An example presentation using [reveal.js](https://revealjs.com) and [Vite](https://vitejs.dev).
