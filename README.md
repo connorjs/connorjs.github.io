@@ -8,6 +8,7 @@ My GitHub Pages website.
 - [docs](./docs) - Markdown files for the mdBook site
 - [packages](./packages) - npm packages
   - [presentations](./packages/presentations) - Reveal.js Markdown presentations
+- [theme](./theme) - Theming for mdBook
 
 ## Getting started
 

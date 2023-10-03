@@ -2,7 +2,7 @@ import Reveal from "reveal.js";
 import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm.js";
 
 import "reveal.js/dist/reveal.css";
-import "reveal.js/dist/theme/dracula.css"; // TODO: Build theme
+import "./render-slides.pcss";
 
 /**
  * Renders the given slides.
