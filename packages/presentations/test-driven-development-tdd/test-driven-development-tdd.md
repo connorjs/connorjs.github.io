@@ -94,6 +94,7 @@ Traditional pyramid, but could have 4 layers.
 - Module
 - Application
 - System
+
 </aside>
 
 ## Testing Pyramid
@@ -195,8 +196,8 @@ Write the test
 
 ```js
 it(`should use the given key`, ({ expect }) => {
-	useUrlState(`foo`, `bar`);
-	expect(searchParams().get(`foo`)).toBeDefined();
+  useUrlState(`foo`, `bar`);
+  expect(searchParams().get(`foo`)).toBeDefined();
 });
 ```
 
@@ -209,14 +210,14 @@ Make it compile/run
 
 ```js
 it(`should use the given key`, ({ expect }) => {
-	useUrlState(`foo`, `bar`);
-	expect(searchParams().get(`foo`)).toBeDefined();
+  useUrlState(`foo`, `bar`);
+  expect(searchParams().get(`foo`)).toBeDefined();
 });
 ```
 
 ```js
 function useUrlState() {
-	// TODO
+  // TODO
 }
 ```
 
@@ -229,15 +230,15 @@ Make it pass
 
 ```js
 it(`should use the given key`, ({ expect }) => {
-	useUrlState(`foo`, `bar`);
-	expect(searchParams().get(`foo`)).toBeDefined();
+  useUrlState(`foo`, `bar`);
+  expect(searchParams().get(`foo`)).toBeDefined();
 });
 ```
 
 ```js
 function useUrlState(key, initial) {
-	const params = new URLSearchParams({ [key]: initial });
-	window.location.search = params.toString();
+  const params = new URLSearchParams({ [key]: initial });
+  window.location.search = params.toString();
 }
 ```
 
@@ -250,15 +251,15 @@ Next test: get the value
 
 ```js
 it(`should return the value`, ({ expect }) => {
-	const [foo] = useUrlState(`foo`, `bar`);
-	expect(foo).toBe(`bar`);
+  const [foo] = useUrlState(`foo`, `bar`);
+  expect(foo).toBe(`bar`);
 });
 ```
 
 ```js
 function useUrlState(key, initial) {
-	const params = new URLSearchParams({ [key]: initial });
-	window.location.search = params.toString();
+  const params = new URLSearchParams({ [key]: initial });
+  window.location.search = params.toString();
 }
 ```
 
@@ -271,16 +272,16 @@ Make it pass
 
 ```js
 it(`should return the value`, ({ expect }) => {
-	const [foo] = useUrlState(`foo`, `bar`);
-	expect(foo).toBe(`bar`);
+  const [foo] = useUrlState(`foo`, `bar`);
+  expect(foo).toBe(`bar`);
 });
 ```
 
 ```js
 function useUrlState(key, initial) {
-	const params = new URLSearchParams({ [key]: initial });
-	window.location.search = params.toString();
-	return [params.get(key)];
+  const params = new URLSearchParams({ [key]: initial });
+  window.location.search = params.toString();
+  return [params.get(key)];
 }
 ```
 
@@ -293,17 +294,17 @@ One more time! The update
 
 ```js
 it(`should update the URL`, ({ expect }) => {
-	const [, setFoo] = useUrlState(`foo`, `bar`);
-	setFoo(`new-value`);
-	expect(window.location.search).toBe(`foo=new-value`);
+  const [, setFoo] = useUrlState(`foo`, `bar`);
+  setFoo(`new-value`);
+  expect(window.location.search).toBe(`foo=new-value`);
 });
 ```
 
 ```js
 function useUrlState(key, initial) {
-	const params = new URLSearchParams({ [key]: initial });
-	window.location.search = params.toString();
-	return [params.get(key)];
+  const params = new URLSearchParams({ [key]: initial });
+  window.location.search = params.toString();
+  return [params.get(key)];
 }
 ```
 
@@ -316,20 +317,20 @@ And make it pass!
 
 ```js
 it(`should update the URL`, ({ expect }) => {
-	const [, setFoo] = useUrlState(`foo`, `bar`);
-	setFoo(`new-value`);
-	expect(window.location.search).toBe(`foo=new-value`);
+  const [, setFoo] = useUrlState(`foo`, `bar`);
+  setFoo(`new-value`);
+  expect(window.location.search).toBe(`foo=new-value`);
 });
 ```
 
 ```js
 function useUrlState(key, initial) {
-	// ...
-	const update = (newValue) => {
-		const newParams = new URLSearchParams({ [key]: newValue });
-		window.location.search = newParams.toString();
-	};
-	return [params.get(key), update];
+  // ...
+  const update = (value) => {
+    const params = new URLSearchParams({ [key]: value });
+    window.location.search = params.toString();
+  };
+  return [params.get(key), update];
 }
 ```
 
@@ -365,9 +366,9 @@ Make a failing test
 
 ```js
 it(`should handle two parameters`, ({ expect }) => {
-	useUrlState(`foo`, `bar`);
-	useUrlState(`fish`, `red`);
-	expect(window.location.search).toBe(`foo=bar&fish=red`);
+  useUrlState(`foo`, `bar`);
+  useUrlState(`fish`, `red`);
+  expect(window.location.search).toBe(`foo=bar&fish=red`);
 });
 ```
 
@@ -381,12 +382,12 @@ And squash the bug!
 
 ```js []
 function useUrlState(key, initial) {
-	const params = new URLSearchParams({ [key]: initial });
-	const update = (newValue) => {
-		const newParams = new URLSearchParams({ [key]: newValue });
-		window.location.search = newParams.toString();
-	};
-	return [params.get(key), update];
+  const params = new URLSearchParams({ [key]: initial });
+  const update = (value) => {
+    const params = new URLSearchParams({ [key]: value });
+    window.location.search = params.toString();
+  };
+  return [params.get(key), update];
 }
 ```
 
@@ -400,15 +401,16 @@ function useUrlState(key, initial) {
 
 And squash the bug!
 
-```js [2-3]
+```js [2-4]
 function useUrlState(key, initial) {
-	const params = new URLSearchParams(window.location.search);
-	params.set(key, initial);
-	const update = (newValue) => {
-		const newParams = new URLSearchParams({ [key]: newValue });
-		window.location.search = newParams.toString();
-	};
-	return [params.get(key), update];
+  const current = window.location.search;
+  const params = new URLSearchParams(current);
+  params.set(key, initial);
+  const update = (value) => {
+    const params = new URLSearchParams({ [key]: value });
+    window.location.search = params.toString();
+  };
+  return [params.get(key), update];
 }
 ```
 
@@ -422,16 +424,18 @@ function useUrlState(key, initial) {
 
 And correct update right now
 
-```js [5-6]
+```js [6-8]
 function useUrlState(key, initial) {
-	const params = new URLSearchParams(window.location.search);
-	params.set(key, initial);
-	const update = (newValue) => {
-		const newParams = new URLSearchParams(window.location.search);
-		newParams.set(key, newValue);
-		window.location.search = newParams.toString();
-	};
-	return [params.get(key), update];
+  const current = window.location.search;
+  const params = new URLSearchParams(current);
+  params.set(key, initial);
+  const update = (value) => {
+    const current = window.location.search;
+    const params = new URLSearchParams(current);
+    params.set(key, value);
+    window.location.search = params.toString();
+  };
+  return [params.get(key), update];
 }
 ```
 
@@ -447,15 +451,15 @@ And then I add the update test
 
 ```js
 it(`should handle two parameters update`, ({ expect }) => {
-	const [, setFoo] = useUrlState(`foo`, `bar`);
-	const [, setFish] = useUrlState(`fish`, `red`);
-	expect(window.location.search).toBe(`foo=bar&fish=red`);
+  const [, setFoo] = useUrlState(`foo`, `bar`);
+  const [, setFish] = useUrlState(`fish`, `red`);
+  expect(window.location.search).toBe(`foo=bar&fish=red`);
 
-	setFish("blue");
-	expect(window.location.search).toBe(`foo=bar&fish=blue`);
+  setFish("blue");
+  expect(window.location.search).toBe(`foo=bar&fish=blue`);
 
-	setFoo("bazz");
-	expect(window.location.search).toBe(`foo=bazz&fish=blue`);
+  setFoo("bazz");
+  expect(window.location.search).toBe(`foo=bazz&fish=blue`);
 });
 ```
 

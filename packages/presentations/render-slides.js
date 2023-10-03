@@ -12,21 +12,21 @@ import "./render-slides.pcss";
  * @param {string} slides - Markdown slide deck
  */
 export function renderSlides(slides) {
-	const textarea = document.createElement("textarea");
-	textarea.setAttribute("data-template", undefined);
-	textarea.innerHTML = slides;
+  const textarea = document.createElement("textarea");
+  textarea.setAttribute("data-template", undefined);
+  textarea.innerHTML = slides;
 
-	document.querySelector(`[data-id="root"]`).append(textarea);
+  document.querySelector(`[data-id="root"]`).append(textarea);
 
-	let deck = new Reveal({
-		hash: true,
-		hashOneBasedIndex: true,
-		hideCursorTime: 3_000, // ms
-		markdown: {
-			smartypants: true, // use “smart” typographic punctuation
-		},
-		plugins: [Markdown, Highlight, Notes], // order matters for plugins!
-		slideNumber: true,
-	});
-	deck.initialize();
+  let deck = new Reveal({
+    hash: true,
+    hashOneBasedIndex: true,
+    hideCursorTime: 3_000, // ms
+    markdown: {
+      smartypants: true, // use “smart” typographic punctuation
+    },
+    plugins: [Markdown, Highlight, Notes], // order matters for plugins!
+    slideNumber: true,
+  });
+  deck.initialize();
 }

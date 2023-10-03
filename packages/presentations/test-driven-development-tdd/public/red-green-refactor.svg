@@ -1,17 +1,17 @@
 <svg
-	font-family="Arial,sans-serif"
-	font-size="100px"
-	dominant-baseline="middle"
-	text-anchor="middle"
-	viewBox="0 0 1000 1000"
-	xmlns="http://www.w3.org/2000/svg"
+  font-family="Arial,sans-serif"
+  font-size="100px"
+  dominant-baseline="middle"
+  text-anchor="middle"
+  viewBox="0 0 1000 1000"
+  xmlns="http://www.w3.org/2000/svg"
 >
-	<circle cx="28%" cy="36%" r="150" fill="darkred" />
-	<text x="28%" y="36%" fill="white">Fail</text>
+  <circle cx="28%" cy="36%" r="150" fill="darkred" />
+  <text x="28%" y="36%" fill="white">Fail</text>
 
-	<circle cx="72%" cy="36%" r="150" fill="darkgreen" />
-	<text x="72%" y="36%" fill="white">Pass</text>
+  <circle cx="72%" cy="36%" r="150" fill="darkgreen" />
+  <text x="72%" y="36%" fill="white">Pass</text>
 
-	<ellipse cx="50%" cy="68%" rx="210" ry="150" fill="royalblue" />
-	<text x="50%" y="68%" fill="white">Refactor</text>
+  <ellipse cx="50%" cy="68%" rx="210" ry="150" fill="royalblue" />
+  <text x="50%" y="68%" fill="white">Refactor</text>
 </svg>

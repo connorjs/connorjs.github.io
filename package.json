@@ -1,16 +1,16 @@
 {
-	"name": "connorjs-github-io",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"build": "npm run build -w presentations",
-		"format": "prettier -w '**/*.{cjs,css,html,js,json,md,svg}'",
-		"start": "npm start -w presentations"
-	},
-	"devDependencies": {
-		"prettier": "^3.0.3"
-	},
-	"workspaces": [
-		"packages/*"
-	]
+  "name": "connorjs-github-io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build -w presentations",
+    "format": "prettier -w '**/*.{cjs,css,html,js,json,md,svg}'",
+    "start": "npm start -w presentations"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

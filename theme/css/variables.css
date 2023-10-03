@@ -1,13 +1,13 @@
 /* Globals */
 
 :root {
-	--sidebar-width: 300px;
-	--page-padding: 15px;
-	--content-max-width: 750px;
-	--menu-bar-height: 50px;
-	--mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo,
-		"DejaVu Sans Mono", monospace, monospace;
-	--code-font-size: 0.875em; /* please adjust the ace font size accordingly in editor.js */
+  --sidebar-width: 300px;
+  --page-padding: 15px;
+  --content-max-width: 750px;
+  --menu-bar-height: 50px;
+  --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo,
+    "DejaVu Sans Mono", monospace, monospace;
+  --code-font-size: 0.875em; /* please adjust the ace font size accordingly in editor.js */
 }
 
 /* Themes */
@@ -21,141 +21,141 @@ The `html` block that follows these themes uses those terminal colors to define 
 */
 
 .light {
-	--bg: #ffffff;
-	--fg: #474747;
-	--color-scheme: light;
+  --bg: #ffffff;
+  --fg: #474747;
+  --color-scheme: light;
 
-	--inline-code-color: var(--brightred);
-	--brightred: #bf0000;
+  --inline-code-color: var(--brightred);
+  --brightred: #bf0000;
 
-	--black: #ebebeb;
-	--brightblack: #cdcdcd;
-	--white: #878787;
-	--brightwhite: #282828;
+  --black: #ebebeb;
+  --brightblack: #cdcdcd;
+  --white: #878787;
+  --brightwhite: #282828;
 
-	--yellow: #c49700;
-	--blue: #0064e4;
-	--cyan: #00ad9c;
+  --yellow: #c49700;
+  --blue: #0064e4;
+  --cyan: #00ad9c;
 }
 
 .warmlight {
-	--bg: #fbf3db;
-	--fg: #53676d;
-	--color-scheme: light;
+  --bg: #fbf3db;
+  --fg: #53676d;
+  --color-scheme: light;
 
-	--inline-code-color: var(--brightred);
-	--brightred: #cc1729;
+  --inline-code-color: var(--brightred);
+  --brightred: #cc1729;
 
-	--black: #e9e4d0;
-	--brightblack: #cfcebe;
-	--white: #909995;
-	--brightwhite: #3a4d53;
+  --black: #e9e4d0;
+  --brightblack: #cfcebe;
+  --white: #909995;
+  --brightwhite: #3a4d53;
 
-	--yellow: #ad8900;
-	--blue: #0072d4;
-	--cyan: #009c8f;
+  --yellow: #ad8900;
+  --blue: #0072d4;
+  --cyan: #009c8f;
 }
 
 .cooldark {
-	--bg: #103c48;
-	--fg: #adbcbc;
-	--color-scheme: dark;
+  --bg: #103c48;
+  --fg: #adbcbc;
+  --color-scheme: dark;
 
-	--inline-code-color: var(--blue);
+  --inline-code-color: var(--blue);
 
-	--black: #174956;
-	--brightblack: #325b66;
-	--white: #72898f;
-	--brightwhite: #cad8d9;
+  --black: #174956;
+  --brightblack: #325b66;
+  --white: #72898f;
+  --brightwhite: #cad8d9;
 
-	--yellow: #dbb32d;
-	--blue: #4695f7;
-	--cyan: #41c7b9;
+  --yellow: #dbb32d;
+  --blue: #4695f7;
+  --cyan: #41c7b9;
 }
 
 .dark {
-	--bg: #181818;
-	--fg: #b9b9b9;
-	--color-scheme: dark;
+  --bg: #181818;
+  --fg: #b9b9b9;
+  --color-scheme: dark;
 
-	--inline-code-color: var(--blue);
+  --inline-code-color: var(--blue);
 
-	--black: #252525;
-	--brightblack: #3b3b3b;
-	--white: #777777;
-	--brightwhite: #dedede;
+  --black: #252525;
+  --brightblack: #3b3b3b;
+  --white: #777777;
+  --brightwhite: #dedede;
 
-	--yellow: #dbb32d;
-	--blue: #368aeb;
-	--cyan: #3fc5b7;
+  --yellow: #dbb32d;
+  --blue: #368aeb;
+  --cyan: #3fc5b7;
 }
 
 /* Invert code blocks for custom dark themes */
 .dark .hljs,
 .cooldark .hljs {
-	filter: invert(100%);
+  filter: invert(100%);
 }
 
 /* Use the dark theme in no-js case. */
 @media (prefers-color-scheme: dark) {
-	/* Default light */
-	.light.no-js {
-		/* Copies default dark */
-		--bg: #181818;
-		--fg: #b9b9b9;
-		--color-scheme: dark;
+  /* Default light */
+  .light.no-js {
+    /* Copies default dark */
+    --bg: #181818;
+    --fg: #b9b9b9;
+    --color-scheme: dark;
 
-		--inline-code-color: var(--blue);
+    --inline-code-color: var(--blue);
 
-		--black: #252525;
-		--brightblack: #3b3b3b;
-		--white: #777777;
-		--brightwhite: #dedede;
+    --black: #252525;
+    --brightblack: #3b3b3b;
+    --white: #777777;
+    --brightwhite: #dedede;
 
-		--yellow: #dbb32d;
-		--blue: #368aeb;
-		--cyan: #3fc5b7;
-	}
+    --yellow: #dbb32d;
+    --blue: #368aeb;
+    --cyan: #3fc5b7;
+  }
 
-	/* And invert code block */
-	.light.no-js .hljs {
-		filter: invert(100%);
-	}
+  /* And invert code block */
+  .light.no-js .hljs {
+    filter: invert(100%);
+  }
 }
 
 html {
-	--sidebar-bg: var(--black);
-	--sidebar-fg: var(--brightwhite);
-	--sidebar-non-existant: var(--white);
-	--sidebar-active: var(--blue);
-	--sidebar-spacer: var(--white);
+  --sidebar-bg: var(--black);
+  --sidebar-fg: var(--brightwhite);
+  --sidebar-non-existant: var(--white);
+  --sidebar-active: var(--blue);
+  --sidebar-spacer: var(--white);
 
-	--scrollbar: var(--fg);
+  --scrollbar: var(--fg);
 
-	--icons: var(--white);
-	--icons-hover: var(--fg);
+  --icons: var(--white);
+  --icons-hover: var(--fg);
 
-	--links: var(--blue);
+  --links: var(--blue);
 
-	--theme-popup-bg: var(--black);
-	--theme-popup-border: var(--white);
-	--theme-hover: var(--brightblack);
+  --theme-popup-bg: var(--black);
+  --theme-popup-border: var(--white);
+  --theme-hover: var(--brightblack);
 
-	--quote-bg: var(--black);
-	--quote-border: var(--brightblack);
+  --quote-bg: var(--black);
+  --quote-border: var(--brightblack);
 
-	--warning-border: var(--yellow);
+  --warning-border: var(--yellow);
 
-	--table-border-color: var(--white);
-	--table-header-bg: var(--brightblack);
-	--table-alternate-bg: var(--black);
+  --table-border-color: var(--white);
+  --table-header-bg: var(--brightblack);
+  --table-alternate-bg: var(--black);
 
-	--searchbar-border-color: var(--black);
-	--searchbar-bg: var(--fg);
-	--searchbar-fg: var(--bg);
-	--searchbar-shadow-color: var(--brightblack);
-	--searchresults-header-fg: var(--white);
-	--searchresults-border-color: var(--white);
-	--searchresults-li-bg: var(--brightwhite);
-	--search-mark-bg: var(--cyan);
+  --searchbar-border-color: var(--black);
+  --searchbar-bg: var(--fg);
+  --searchbar-fg: var(--bg);
+  --searchbar-shadow-color: var(--brightblack);
+  --searchresults-header-fg: var(--white);
+  --searchresults-border-color: var(--white);
+  --searchresults-li-bg: var(--brightwhite);
+  --search-mark-bg: var(--cyan);
 }
