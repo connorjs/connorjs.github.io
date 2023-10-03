@@ -10,5 +10,15 @@ export default defineConfig({
 	build: {
 		emptyOutDir: true, // Vite build controls this directory
 		outDir: `../../book/presentations/${deck}`, // Build into mdBook structure
+		rollupOptions: {
+			output: {
+				manualChunks(id) {
+					if (id.includes("reveal.js")) {
+						return "reveal.js";
+					}
+					return null; // Use default chunking strategy
+				},
+			},
+		},
 	},
 });
