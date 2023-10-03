@@ -106,7 +106,7 @@ console.log(`Hello, ${name} on ${date.toLocaleString()}`);
 
 Images, gifs, whatever you want!
 
-![This is fine meme](./thisisfine-banner-2panel.jpg)
+![This is fine meme](/presentations/example/thisisfine-banner-2panel.jpg)
 
 ---
 

@@ -1,0 +1,19 @@
+<svg
+	font-family="Arial,sans-serif"
+	font-size="100px"
+	text-anchor="middle"
+	viewBox="0 0 1000 1000"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path
+		d="M100,900 L500,100 L900,900 Z"
+		stroke="#347AD5"
+		stroke-width="10px"
+		fill="none"
+	/>
+	<path d="M235,630 L765,630" stroke="#347AD5" stroke-width="10px" />
+	<path d="M350,400 L650,400" stroke="#347AD5" stroke-width="10px" />
+	<text x="50%" y="820" fill="#347AD5">Unit</text>
+	<text x="50%" y="590" fill="#347AD5">Service</text>
+	<text x="50%" y="370" fill="#347AD5">UI</text>
+</svg>
