@@ -1,5 +1,16 @@
 # Presentations
 
+## Daily Code Reviews
+
+I advocate for daily code reviews (CRs, a.k.a. Pull Requests, PRs) and introduce
+tools to reach consistent, daily delivery.
+
+I describe the benefits of small commits and fast reviews, share best practices
+for splitting commits, and recommend guidelines for code review size.
+
+<a href="/presentations/daily-code-review" target="_blank">Open presentation
+<i class="fa fa-external-link"></i><span class="sr-only">in a new tab</span></a>
+
 ## TDD: Yes You Can!
 
 I discuss Test Driven Development (TDD) with a focus on making it your own and

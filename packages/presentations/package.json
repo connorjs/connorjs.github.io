@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "run-s build:*",
+    "build:dcr": "VITE_DECK=daily-code-reviews VITE_TITLE='Daily Code Reviews' vite build",
     "build:example": "VITE_DECK=example VITE_TITLE='Reveal.js + Vite' vite build",
     "build:tdd": "VITE_DECK=test-driven-development-tdd VITE_TITLE='TDD ✅' vite build",
     "start": "vite"
