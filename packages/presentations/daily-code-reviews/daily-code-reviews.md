@@ -22,36 +22,30 @@ _by Connor Sullivan_
 
 ## Code reviews
 
-<div style="display:flex;align-items:center;gap:1rem">
-
+<div style="display:flex;align-items:stretch;gap:1rem;position:relative;bottom:2rem">
 <img
     alt="1000 lines of code; LGTM"
-    style="height:50vh"
     src="/presentations/daily-code-reviews/1000-lines-lgtm.jpg"
 />
-
 </div>
+
 </section>
 
 <section data-auto-animate>
 
 ## Code reviews
 
-<div style="display:flex;align-items:center;gap:1rem">
-
+<div style="display:flex;align-items:stretch;gap:1rem;position:relative;bottom:2rem">
 <img
     alt="1000 lines of code; LGTM"
-    style="height:50vh"
     src="/presentations/daily-code-reviews/1000-lines-lgtm.jpg"
 />
-
 <img
     alt="10 lines of code; 10 comments"
-    style="height:50vh"
     src="/presentations/daily-code-reviews/10-lines-10-comments.jpg"
 />
-
 </div>
+
 </section>
 
 ---
@@ -69,8 +63,6 @@ Types of commits
 Guidelines
 
 Techniques
-
-<!--_Bonus_: Code Review best practices <!-- .element class="fragment" -->
 
 ---
 
@@ -198,7 +190,7 @@ Techniques
 
 <img
     alt="The code is more what you’d call guidelines, than actual rules."
-    style="width:50vw"
+    style="width:100%"
     src="/presentations/daily-code-reviews/guidelines.webp"
 />
 

@@ -8,7 +8,7 @@ tools to reach consistent, daily delivery.
 I describe the benefits of small commits and fast reviews, share best practices
 for splitting commits, and recommend guidelines for code review size.
 
-<a href="/presentations/daily-code-review" target="_blank">Open presentation
+<a href="/presentations/daily-code-reviews" target="_blank">Open presentation
 <i class="fa fa-external-link"></i><span class="sr-only">in a new tab</span></a>
 
 ## TDD: Yes You Can!
