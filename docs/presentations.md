@@ -1,5 +1,17 @@
 # Presentations
 
+## End-to-end React with .NET
+
+I present a collection of short stories involving full stack development with
+React and .NET. _This exists as a work in progress._
+
+I cover the C4 Model, formatting and git hooks, ESLint and StyleCop, Open API
+and code generation, Tanstack Query, Vite and build analysis, React router,
+Storybook, GitHub Copilot, and Reveal.js.
+
+<a href="/presentations/end-to-end-react-with-dotnet" target="_blank">Open presentation
+<i class="fa fa-external-link"></i><span class="sr-only">in a new tab</span></a>
+
 ## Daily Code Reviews
 
 I advocate for daily code reviews (CRs, a.k.a. Pull Requests, PRs) and introduce
