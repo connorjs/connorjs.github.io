@@ -153,7 +153,7 @@ _Icons retrieved from their website or [simple-icons](https://github.com/simple-
 
 - “If you remember one thing…”
 
-- Questions after each <!-- .element class="fragment" -->
+- <!-- .element class="fragment" -->Questions after each 
 
 </section>
 
@@ -618,9 +618,9 @@ _Linked to their slides_
 
 ## Thank you
 
+@connorjs ([GitHub](https://github.com/connorjs))
+
 <figure>
     <figcaption class="smaller">QR link to this slide deck</figcaption>
     <img alt="QR code" src="/presentations/end-to-end-react-with-dotnet/qr-code.svg" style="height:30vh">
 </figure>
-
-@connorjs ([GitHub](https://github.com/connorjs))
