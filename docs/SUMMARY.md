@@ -1,8 +1,18 @@
 # Summary
 
-[Introduction](index.md)
+[Welcome](index.md)
 
-# Other
+# Guides
 
-- [Presentations](presentations.md)
-- [Test page](test.md)
+[Introduction](guides/index.md)
+
+- [React](guides/react.md)
+
+# Presentations
+
+[Overview](presentations.md)
+
+- [End-to-end React with .NET](/presentations/end-to-end-react-with-dotnet)
+- [Daily Code Reviews](/presentations/daily-code-reviews)
+- [TDD: Yes You Can!](/presentations/test-driven-development-tdd)
+- [Example](/presentations/example)
