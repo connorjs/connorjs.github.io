@@ -4,15 +4,10 @@
 
 # Guides
 
-[Introduction](guides/index.md)
-
+- [My guides](guides/index.md)
 - [React](guides/react.md)
 
-# Presentations
+# Other
 
-[Overview](presentations.md)
-
-- [End-to-end React with .NET](/presentations/end-to-end-react-with-dotnet)
-- [Daily Code Reviews](/presentations/daily-code-reviews)
-- [TDD: Yes You Can!](/presentations/test-driven-development-tdd)
-- [Example](/presentations/example)
+- [Presentations](presentations.md)
+- [Test page](test.md)

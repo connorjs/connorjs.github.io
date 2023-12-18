@@ -7,6 +7,7 @@ language = "en-US"
 
 [build]
 build-dir = "book"  # Update mdbook.yml if you change!
+create-missing = false
 
 [output.html]
 default-theme = "light"
