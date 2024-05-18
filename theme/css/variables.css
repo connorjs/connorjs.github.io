@@ -2,25 +2,28 @@
 
 :root {
   --sidebar-width: 300px;
+  --sidebar-resize-indicator-width: 8px;
+  --sidebar-resize-indicator-space: 2px;
   --page-padding: 15px;
   --content-max-width: 750px;
   --menu-bar-height: 50px;
   --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo,
     "DejaVu Sans Mono", monospace, monospace;
-  --code-font-size: 0.875em; /* please adjust the ace font size accordingly in editor.js */
+  --code-font-size: 0.875em
+    /* please adjust the ace font size accordingly in editor.js */;
 }
 
 /* Themes */
 /*
 Themes originate from [Selenized](https://github.com/jan-warchol/selenized/tree/master#readme),
-but I have renamed them: Light (White), Warm Light (Light), Cool Dark (Dark), Dark (Black).
+but I have renamed them: Light (White), Warm (Light), Cool (Dark), Dark (Black).
 To simplify editing, each theme defines a subset of its terminal colors.
 The theme also defines `--inline-code-color` due to code block inversions in dark mode.
 Light themes use `var(--brightred)` and dark themes use `var(--blue)`.
 The `html` block that follows these themes uses those terminal colors to define the mdBook colors.
 */
 
-.light {
+:root[class^="light"] {
   --bg: #ffffff;
   --fg: #474747;
   --color-scheme: light;
@@ -38,7 +41,7 @@ The `html` block that follows these themes uses those terminal colors to define 
   --cyan: #00ad9c;
 }
 
-.warmlight {
+:root[class^="warm"] {
   --bg: #fbf3db;
   --fg: #53676d;
   --color-scheme: light;
@@ -56,7 +59,7 @@ The `html` block that follows these themes uses those terminal colors to define 
   --cyan: #009c8f;
 }
 
-.cooldark {
+.cool {
   --bg: #103c48;
   --fg: #adbcbc;
   --color-scheme: dark;
@@ -92,8 +95,51 @@ The `html` block that follows these themes uses those terminal colors to define 
 
 /* Invert code blocks for custom dark themes */
 .dark .hljs,
-.cooldark .hljs {
+.cool .hljs {
   filter: invert(100%);
+}
+
+/* System (prefers-color-scheme) combinations. TODO: PostCSS step for sharing. */
+@media (prefers-color-scheme: dark) {
+  :root[class$="-cool"] {
+    --bg: #103c48;
+    --fg: #adbcbc;
+    --color-scheme: dark;
+
+    --inline-code-color: var(--blue);
+
+    --black: #174956;
+    --brightblack: #325b66;
+    --white: #72898f;
+    --brightwhite: #cad8d9;
+
+    --yellow: #dbb32d;
+    --blue: #4695f7;
+    --cyan: #41c7b9;
+  }
+
+  :root[class$="-dark"] {
+    --bg: #181818;
+    --fg: #b9b9b9;
+    --color-scheme: dark;
+
+    --inline-code-color: var(--blue);
+
+    --black: #252525;
+    --brightblack: #3b3b3b;
+    --white: #777777;
+    --brightwhite: #dedede;
+
+    --yellow: #dbb32d;
+    --blue: #368aeb;
+    --cyan: #3fc5b7;
+  }
+
+  /* Invert code blocks for custom dark themes */
+  :root[class$="-cool"] .hljs,
+  :root[class$="-dark"] .hljs {
+    filter: invert(100%);
+  }
 }
 
 /* Use the dark theme in no-js case. */
