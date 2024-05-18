@@ -131,6 +131,7 @@ _by Connor Sullivan_
 </div>
 
 _Icons retrieved from their website or [simple-icons](https://github.com/simple-icons/simple-icons)_
+
 <!-- .element class="fragment smaller" -->
 
 </section>
@@ -153,7 +154,7 @@ _Icons retrieved from their website or [simple-icons](https://github.com/simple-
 
 - “If you remember one thing…”
 
-- <!-- .element class="fragment" -->Questions after each 
+- <!-- .element class="fragment" -->Questions after each
 
 </section>
 
@@ -311,7 +312,7 @@ Reveal.js
 
 ## Open API and code generation
 
-> More than just object/model generation 
+> More than just object/model generation
 
 <p class="questions fragment">Questions?</p>
 
@@ -417,7 +418,7 @@ export const routes = {
   home: `/`,
   dashboard: `/dashboard`,
   products: {
-    search: (props: SearchParameters) => 
+    search: (props: SearchParameters) =>
         `/products?q=${props.query}&sort=${props.sort}`,
     detail: (productId: string) => `/products/${productId}`,
     edit: (productId: string) => `/products/${productId}/edit`,
@@ -437,19 +438,19 @@ type SearchParameters = { query: string; sort: string; }
 ```tsx
 /** The application router (only used by `App`). */
 export function createRouter() {
-    return createBrowserRouter([
-      { path: routes.home, element: <HomePage /> },
-      { path: routes.dashboard, element: <DashboardPage /> },
-      {
-        path: routes.products.search(),
-        element: lazy(() => import("@/pages/products-search")) 
-      },
-      { 
-        path: routes.products.details(":productId"), 
-        element: lazy(() => import("@/pages/products-search")) 
-      },
-      { path: `*`, element: <NotFound404Page /> },
-    ])
+  return createBrowserRouter([
+    { path: routes.home, element: <HomePage /> },
+    { path: routes.dashboard, element: <DashboardPage /> },
+    {
+      path: routes.products.search(),
+      element: lazy(() => import("@/pages/products-search")),
+    },
+    {
+      path: routes.products.details(":productId"),
+      element: lazy(() => import("@/pages/products-search")),
+    },
+    { path: `*`, element: <NotFound404Page /> },
+  ]);
 }
 ```
 
@@ -612,6 +613,7 @@ export function createRouter() {
 </div>
 
 _Linked to their slides_
+
 <!-- .element class="smaller" -->
 
 ---

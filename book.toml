@@ -12,7 +12,7 @@ create-missing = false
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "dark"
-curly-quotes = true
+smart-punctuation = true
 git-repository-url = "https://github.com/connorjs/connorjs.github.io"
 edit-url-template = "https://github.com/connorjs/connorjs.github.io/edit/main/{path}"
 input-404 = "404.md"

@@ -40,7 +40,8 @@
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="{{ path_to_root }}highlight.css">
-        {{! Removed other highlight.js themes }}
+        <link rel="stylesheet" href="{{ path_to_root }}tomorrow-night.css">
+        <link rel="stylesheet" href="{{ path_to_root }}ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         {{#each additional_css}}
@@ -111,7 +112,9 @@
             <div class="sidebar-scrollbox">
                 {{#toc}}{{/toc}}
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -153,8 +156,12 @@
                             {{! Changed theme selection }}
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="warmlight">Warm Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="cooldark">Cool Dark</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="warm">Warm (light)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="cool">Cool (dark)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light-dark">System (Light + Dark)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light-cool">System (Light + Cool)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="warm-dark">System (Warm + Dark)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="warm-cool">System (Warm + Cool)</button></li>
                         </ul>
                         {{#if search_enabled}}
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
