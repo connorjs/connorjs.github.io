@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "run-s build:*",
-    "build:1": "npm run build -w presentations",
-    "build:2": "mdbook build",
+    "build:1": "mdbook build",
+    "build:2": "npm run build -w presentations",
     "ci-build": "npm-run-all -l -p eslint format -s build",
     "eslint": "eslint -f pretty .",
     "eslint:fix": "npm run eslint -- --fix",
